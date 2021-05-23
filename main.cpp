@@ -49,13 +49,13 @@ Complex operator + (Complex& a, Complex& b) {
 	double re = a.re + b.re;
 	double im = a.im + b.im;
 
-	cout << "сумма в арифметической форме :" << re << " + " << im << "i" << endl;
+	cout << "Summ arithmetic form :" << re << " + " << im << "i" << endl;
 
 	double f1 = sqrt(re * re + im * im);
 	double f2 = re / f1;
 	double f3 = im / f1;
 
-	cout << "сумма в тригонометрической форме :" ;
+	cout << "summ trigonometric form :" ;
 	cout << f1 << "(cos(" << f2 << ") + isin(" << f3 << "))" << endl;
 
 	Complex t(re, im);
@@ -68,13 +68,13 @@ Complex operator - (Complex& a, Complex& b) {
 	double re = a.re - b.re;
 	double im = a.im - b.im;
 
-	cout << "вычитание : " << re << " + " << im << "i" << endl;
+	cout << "subtraction : " << re << " + " << im << "i" << endl;
 
 	double f1 = sqrt(re * re + im * im);
 	double f2 = re / f1;
 	double f3 = im / f1;
 
-	cout << "вычитание в тригонометрической форме :" ;
+	cout << "trigonometric subtraction :" ;
 	cout << f1 << "(cos(" << f2 << ") + isin(" << f3 << "))" << endl;
 
 	Complex t(re, im);
@@ -87,13 +87,13 @@ Complex operator * (Complex& a, Complex& b) {
 	double re = a.re * b.re - a.im * b.im;
 	double im = a.im * b.re + a.re * b.im;
 
-	cout << "умножение: " << re << " + " << im << "i" << endl;
+	cout << "multiplication: " << re << " + " << im << "i" << endl;
 
 	double f1 = sqrt(re * re + im * im);
 	double f2 = re / f1;
 	double f3 = im / f1;
 
-	cout << "умножение в тригонометрической форме :";
+	cout << "trigonometric multiplication :";
 	cout << f1 << "(cos(" << f2 << ") + isin(" << f3 << "))" << endl;
 
 	Complex t(re, im);
@@ -104,20 +104,20 @@ Complex operator * (Complex& a, Complex& b) {
 Complex operator / (Complex& a, Complex& b) {
 
 	if (b.re * b.re + b.im * b.im == 0) {
-		cout << "деление на 0";
+		cout << "division 0";
 		exit(0);
 	}
 	else {
 		double re = (a.re * b.re + a.im + b.im) / (b.re * b.re + b.im * b.im);
 		double im = (a.im * b.re - a.re * b.im) / (b.re * b.re + b.im * b.im);
 
-		cout << "частное : " << re << " + " << im << "i" << endl;
+		cout << "quotient : " << re << " + " << im << "i" << endl;
 
 		double f1 = sqrt(re * re + im * im);
 		double f2 = re / f1;
 		double f3 = im / f1;
 
-		cout << "частное в в тригонометрической форме :" ;
+		cout << "trigonometric quotient :" ;
 		cout << f1 << "(cos(" << f2 << ") + isin(" << f3 << "))" << endl;
 
 		Complex t(re, im);
@@ -130,7 +130,7 @@ Complex operator &(Complex& a, Complex& b) {
 
 	int n;
 
-	cout << "введите число степени :" << endl;
+	cout << "enter the number of the degree :" << endl;
 	cin >> n;
 
 	double r = sqrt(a.re * a.re + a.im * a.im);
@@ -138,7 +138,7 @@ Complex operator &(Complex& a, Complex& b) {
 	double f2 = n * a.re / rn;
 	double f3 = n * a.im / rn;
 
-	cout << "тригонометрическая форма возведения в степень :";
+	cout << "trigonometric exponentiation :";
 	cout << rn << "(cos(" << f2 << ") + isin(" << f3 << "))" << endl;
 
 	Complex t(n, rn);
@@ -148,17 +148,17 @@ Complex operator &(Complex& a, Complex& b) {
 
 void Complex::ShowComplex() {
 
-	cout << "введите число" << endl;
+	cout << "enter the number" << endl;
 
 	cin >> re;
 	cin >> im;
 
-	cout << "арифметическая форма :" << re << " + " << im << "i" << endl;
+	cout << "arithmetic form :" << re << " + " << im << "i" << endl;
 
 	double z = sqrt(re * re + im * im);
 
-	cout << "модуль числа :" << z << endl;
-	cout << "тригонометрическая форма :" ;
+	cout << "the absolute value of a number :" << z << endl;
+	cout << "trigonometric form :" ;
 
 	double f = re / z;
 	double f1 = im / z;
@@ -168,7 +168,6 @@ void Complex::ShowComplex() {
 }
 
 int main(void) {
-	setlocale(LC_ALL, "Russian");
 
 	Complex a;
 	Complex b;
